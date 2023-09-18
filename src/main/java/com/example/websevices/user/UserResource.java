@@ -42,20 +42,6 @@ public class UserResource {
     }
 
 
-
-    /*@PostMapping("/users")
-    public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {
-        User save = userDaoService.saveUser(user);
-        //  location  /users/4  => /users/{id}     => /users/ user.getId()
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-                .buildAndExpand(save.getId())
-                .toUri();
-
-        return ResponseEntity.created(location).build();
-    }
-
-     */
-
     @PostMapping("/users")
     public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {
         User save = userDaoService.saveUser(user);

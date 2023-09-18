@@ -18,16 +18,29 @@ public class UserDaoServices {
         users.add(new User(++userCount, "Musa", LocalDate.now().minusYears(30)));
         users.add(new User(++userCount, "Usman", LocalDate.now().minusYears(31)));
         users.add(new User(++userCount, "Abubakar", LocalDate.now().minusYears(32)));
-       // users.add(new User(++userCount, "Mahmud", LocalDate.now().minusYears(33)));
+        users.add(new User(++userCount, "Mahmud", LocalDate.now().minusYears(33)));
     }
     public List<User> findAll(){
         return  users;
     }
 
     public User findOneUser(int id) {
+        //Predicate<? super User> predicate = user -> user.getId().equals(id);
         Predicate<? super User> predicate = user -> user.getId().equals(id);
         User user = users.stream().filter(predicate).findFirst().orElse(null);
         return user;
+
+        /*
+        // Create a list of User objects
+        List<User> userList = new ArrayList<>();
+        // Iterate over the list of User objects
+        for (User user : userList) {
+            // Perform actions on each User object
+            if (user.getId() == id) {
+                return user;
+            }
+        }
+         */
     }
 
     public void deleteById(int id) {

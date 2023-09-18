@@ -12,6 +12,10 @@ public class User {
     @Past
     private LocalDate birthDate;
 
+    public User() {
+
+    }
+
     public Integer getId() {
         return id;
     }
